@@ -39,3 +39,7 @@ tornado==6.5.1
 typing_extensions==4.14.1
 tzdata==2025.2
 urllib3==2.5.0
+langchain-openai>=0.1.0
+langchain-core>=0.2.0    # SystemMessage などで必須
+openai>=1.30.0           # OpenAI ラッパー
+langchain>=0.2.0

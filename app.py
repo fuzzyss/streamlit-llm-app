@@ -1,10 +1,15 @@
 from dotenv import load_dotenv
+import os
 load_dotenv()
 
 # app.py
 import streamlit as st
 from langchain_openai import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage
+
+# OpenAI APIキーの設定（Streamlit Cloud対応）
+if "OPENAI_API_KEY" in st.secrets:
+    os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 # --- 専門家ごとのシステムメッセージ（日本語版） ------------------------------
 ROLE_PROMPTS = {
